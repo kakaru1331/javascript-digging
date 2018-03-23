@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple DOM example</title>
+    <style>
+      .highlight {
+        color: white;
+        background-color: black;
+        padding: 10px;
+        width: 250px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <img src="https://github.com/mdn/learning-area/blob/master/javascript/apis/document-manipulation/dinosaur.png?raw=true">
+      <p>Here a link to the <a href="https://www.mozilla.org/">Mozilla</a></p>
+    </section>
+  </body>
+
+  <script>
+    var link = document.querySelector('a');
+
+    link.textContent = 'Google';
+    link.href = 'https://google.ca';
+    
+    var para = document.createElement('p');
+    para.textContent = 'Hope you know why I cry.';
+    
+    var sect = document.querySelector('section');
+    sect.appendChild(para);
+
+    var text = document.createTextNode(' That\'s why.');
+    para.appendChild(text);
+  </script>
+</html>
